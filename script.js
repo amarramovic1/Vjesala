@@ -48,10 +48,12 @@ function prikaz(){
     dCrta()
 }
 
+// ovo je u redu
+// mogao si umjesto petlje iskoristiti array.fill(value, start, end)
 function dCrta(){
     let prikaz = ''
     for(let i=0; i<randomPonudjeno.length; i++){
-        prikaz += '_'+' '
+        prikaz += '_'+' ' // razmak je bolje rijesiti pomocu CSS-a (letter-spacing property)
     }
     document.getElementById('donjaCrta').innerHTML = prikaz
 }
@@ -72,6 +74,8 @@ function provjeriDugme(slovo) {
     br++;
     if(br === randomPonudjeno.length){
       alert(`Kraj igre! Da li ste tacan odgovor!`);
+        
+      // ovo si mozda mogao rijesiti klasom pa disable-ovati sve elemente te klase  
       abeceda.forEach(function(slovo) { //dodato za disabled 
         document.getElementById("dugme-" + slovo).disabled = true;
       });
